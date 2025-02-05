@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pavan</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #e0e7ff; /* Light blue background */
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .container {
+        width: 85%;
+        margin: 0 auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        flex-grow: 1;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #003366; /* Navy blue background for navbar */
+        color: white;
+        padding: 15px 0;
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar .logo {
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: #fff;
+        margin-left: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+      }
+
+      .navbar ul li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+
+      .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      .navbar ul li a:hover {
+        color: #ffcc00; /* Yellow color on hover */
+      }
+
+      .main-section {
+        background: #006699; /* Dark blue background */
+        padding: 40px;
+        margin-top: 80px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        color: #fff;
+      }
+
+      .main-section h1 {
+        font-size: 2.8rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .main-section p {
+        font-size: 1.2rem;
+        color: #f1f1f1;
+        line-height: 1.8;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .features-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        list-style-type: none;
+      }
+
+      .features-list li {
+        flex: 1 1 calc(30% - 20px);
+        background: #ffcc00; /* Yellow background for features */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        color: #fff;
+      }
+
+      .features-list h2 {
+        font-size: 1.6rem;
+        color: #003366;
+        margin-bottom: 10px;
+      }
+
+      .features-list p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .feedback-section {
+        background: #004d40; /* Dark teal background for feedback */
+        padding: 40px 20px;
+        margin-top: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        color: #fff;
+        margin-top: auto; /* Move to bottom of the page */
+      }
+
+      .feedback-section h2 {
+        font-size: 2.5rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .feedback-form {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .feedback-form label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+        color: #003366;
+      }
+
+      .feedback-form input,
+      .feedback-form textarea {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      .feedback-form textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .feedback-form button {
+        background: #ffcc00; /* Yellow background for button */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+      }
+
+      .feedback-form button:hover {
+        background: #ffb300; /* Darker yellow on hover */
+      }
+
+      .footer {
+        background-color: #003366; /* Navy blue footer */
+        color: #fff;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 1rem;
+        position: relative;
+        width: 100%;
+        bottom: 0;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: 90%;
+        }
+
+        .features-list {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .features-list li {
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <span class="logo">Pavan</span>
+        <ul>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/about-us">About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="main-section">
+        <h1>Pavan Sports Management System</h1>
+        <p>
+          Welcome to Pavan Sports Management Platform sports experience.
+        </p>
+
+        <ul class="features-list">
+          <li>
+            <h2>Team Management</h2>
+            <p>
+              Team management is the process of coordinating a group of people to complete a task or achieve a goal. It involves communication, teamwork, goal setting, and performance evaluations.
+            </p>
+          </li>
+          <li>
+            <h2>Schedule Management</h2>
+            <p>
+              Schedule management is the process of planning, developing, and monitoring a project's schedule to ensure tasks are completed on time.
+            </p>
+          </li>
+          <li>
+            <h2>Player Registration</h2>
+            <p>
+              Players can register, update their profiles, and manage their participation in sports events.
+            </p>
+          </li>
+          <li>
+            <h2>Statistics and Reports</h2>
+            <p>
+              Statistics are a branch of mathematics that involves collecting, analyzing, and presenting data. Statistical reports are documents that summarize the results of statistical analysis.
+            </p>
+          </li>
+          <li>
+            <h2>Notifications and Alerts</h2>
+            <p>
+              Notifications help you keep track of what's new—they let you know if you missed a call, if the date of an event moved, and more.
+            </p>
+          </li>
+          <li>
+            <h2>Administration Panel</h2>
+            <p>
+              Administrators have access to a dedicated dashboard to manage users, teams, sessions, and system settings.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feedback-section">
+      <h2>Feedback</h2>
+      <div class="feedback-form">
+        <form action="/submit-feedback" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2025 Pavan Sports Management. All rights reserved.</p>
+    </div>
+  </body>
+</html>

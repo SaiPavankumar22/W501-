@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8; 
+        margin: 0;
+        padding: 0;
+      }
+      #login-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f4f8; 
+      }
+      .container {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+      h1 {
+        font-size: 28px;
+        text-align: center;
+        color: #003366;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #003366; 
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        outline: none;
+      }
+      input:focus {
+        border-color: #003366; /* Navy blue */
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #003366; /* Navy blue */
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #001f33; /* Darker navy blue */
+      }
+      p {
+        text-align: center;
+        font-size: 14px;
+      }
+      a {
+        color: #003366; /* Navy blue */
+        text-decoration: none;
+      }
+      a:hover {
+        color: #001f33; /* Darker navy blue */
+      }
+    </style>
+  </head>
+  <body id="login-page">
+    <div class="container">
+      <form action="/login" method="POST">
+        <h1>Login</h1>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required />
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="/register">Register</a></p>
+      </form>
+    </div>
+  </body>
+</html>
